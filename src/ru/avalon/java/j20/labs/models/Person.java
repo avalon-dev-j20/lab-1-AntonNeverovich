@@ -1,5 +1,7 @@
 package ru.avalon.java.j20.labs.models;
 
+import java.util.Objects;
+
 /**
  * Представление о человеке.
  */
@@ -13,6 +15,8 @@ public class Person {
      */
     private final String surname;
 
+    private int hash;
+
     /**
      * Создаёт экземпляр класса на основании имени и даты
      * рождения.
@@ -23,6 +27,7 @@ public class Person {
     public Person(String name, String surname) {
         this.name = name;
         this.surname = surname;
+        hash = (int)(Math.random() * 100);
     }
 
     /**
@@ -41,5 +46,16 @@ public class Person {
      */
     public String getSurname() {
         return surname;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        Person person = (Person) o;
+        return hash == person.hash;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname) * hash;
     }
 }
