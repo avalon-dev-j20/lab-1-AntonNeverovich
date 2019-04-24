@@ -1,6 +1,7 @@
 package ru.avalon.java.j20.labs.tasks;
 
 import ru.avalon.java.j20.labs.Task;
+import ru.avalon.java.j20.labs.models.Fibonacci;
 
 import java.util.Iterator;
 
@@ -34,5 +35,16 @@ public class Task3 implements Task {
          * 4. С использованием отладчика проверьте корректность
          *    выполнения задания.
          */
+
+        Fibonacci fibonacci = new Fibonacci(20);
+        int sum = 0;
+        for (int item : fibonacci ) {
+            sum += item;
+        }
+
+        //Проверка
+        System.out.print("\nTASK 3.\nFibonacci:\t" + fibonacci.toString());
+        System.out.println("\nСумма первых 20 чисел: " + sum);
+
     }
 }

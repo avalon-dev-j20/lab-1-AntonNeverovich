@@ -31,5 +31,11 @@ public class Task4 implements Task {
          * 3. С использованием отладчика проверьте что сравнение
          *    объектов типа Person выполняется корректно.
          */
+
+        System.out.print("\nTASK 4.");
+        System.out.print("\nHashCode объекта a = " + a.hashCode());
+        System.out.print("\nHashCode объекта b = " + b.hashCode());
+        System.out.print("\nСравнение объектов a и b: " + isEqual + "\n");
+
     }
 }
